@@ -35,6 +35,8 @@ with app.app_context():
 
 
 
+
+
 def predict_health(glucose, haemoglobin, cholesterol):
 
     conditions = []
@@ -70,7 +72,13 @@ def predict_health(glucose, haemoglobin, cholesterol):
 
 
 
+@app.route('/')
+def home():
+    return "Backend is running successfully"
 
+@app.route('/predict')
+def predict():
+    return "Prediction route"
 
 # CREATE Patient
 @app.route('/patients', methods=['POST'])
